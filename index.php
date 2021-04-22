@@ -50,6 +50,7 @@
     </form>
   </div>
 </nav>
+  <?php include 'partials/_footer.php' ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
