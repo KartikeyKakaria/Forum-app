@@ -1,4 +1,5 @@
-<!-- Button trigger modal -->
+<?php
+echo '<!-- Button trigger modal -->
 
 
 <!-- Modal -->
@@ -20,7 +21,7 @@
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        <small id="emailHelp" class="form-text text-muted">We will never share your email with anyone
                             else.</small>
                     </div>
                     <div class="form-group">
@@ -43,4 +44,5 @@
             </form>
         </div>
     </div>
-</div>
+</div>';
+?>
