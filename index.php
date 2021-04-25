@@ -11,7 +11,7 @@
     <title>iForums -coding discussions</title>
   </head>
   <body>
-  <?php include 'partials/_header.html' ?>
+  <?php include 'partials/_header.php' ?>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

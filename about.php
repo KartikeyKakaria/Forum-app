@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-<?php include 'partials/_header.html'; ?>
+<?php include 'partials/_header.php'; ?>
 <?php include 'partials/_footer.html'; ?>
 
     <!-- Optional JavaScript -->
