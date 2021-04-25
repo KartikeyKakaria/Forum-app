@@ -20,13 +20,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://source.unsplash.com/500x200/?coding,code" class="d-block w-100" alt="...">
+      <img src="code.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://source.unsplash.com/500x200/?programmers,google" class="d-block w-100" alt="...">
+      <img src="Programmer.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://source.unsplash.com/500x200/?coding,microsoft" class="d-block w-100" alt="...">
+      <img src="C.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -38,7 +38,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="container">
+<div class="container my-2">
   <h2 class="text-center">Welcome to iDiscuss - Categories</h2>
   <div class="row">
   <!-- using a for loop to iterate through categories-->
