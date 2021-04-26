@@ -11,7 +11,10 @@
     <title>iForums -coding discussions</title>
   </head>
   <body>
+    <!-- header -->
   <?php include 'partials/_header.php' ?>
+  <?php include 'partials/_dbconnect.php' ?>
+  <!-- slider  starts-->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -38,20 +41,30 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<!-- slider ends -->
+<!-- category conntainer starts -->
 <div class="container my-2">
   <h2 class="text-center">Welcome to iDiscuss - Categories</h2>
   <div class="row">
-  <!-- using a for loop to iterate through categories-->
-<div class="col-md-4">
-  <div class="card" style="width: 18rem;">
-     <img src="https://source.unsplash.com/500x350/?coding,python" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-  </div>
-</div>
+    <!-- Fetch all the categories -->
+    <?php
+     $sql = "SELECT * FROM `categories`";
+     $result = mysqli_query($conn, $sql);
+     while($row = mysqli_fetch_assoc($result)){
+       # using a for loop to iterate through categories
+      echo  '<div class="col-md-4 my-2">
+              <div class="card" style="width: 18rem;">
+                <img src="https://source.unsplash.com/500x350/?'.$row['category_name'].',code" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">'.$row['category_name'].'</h5>
+                    <p class="card-text">'.substr($row['category_description'], 0 , 100).'<a href="#">...</a></p>
+                    <a href="#" class="btn btn-primary">View threads</a>
+                  </div>
+              </div>
+            </div>';
+     }
+    ?>
+
 
 </div>
 </div>
