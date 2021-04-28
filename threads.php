@@ -17,25 +17,164 @@
     <!-- header -->
     <?php include 'partials/_header.php' ?>
     <?php include 'partials/_dbconnect.php' ?>
-    <div class="container my-4">
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome to Python forums</h1>
-            <p class="lead">Python is an interpreted high-level general-purpose programming language. Python's design
-                philosophy emphasizes code readability with its notable use of significant indentation.</p>
-            <hr class="my-4">
-            <p>This forum is to share knowledge about python with each other</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Browse Topics</a>
-        </div>
-    </div>
+    <?php
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT*FROM `categories` WHERE `id` = $id";
+        $result = mysqli_query($conn, $sql);
+        if($result){
+            $cat = mysqli_fetch_assoc($result);
+                $catName = $cat['category_name'];
+            $catDesc = $cat['category_description'];
+            echo '<div class="container my-4">
+            <div class="jumbotron">
+                <h1 class="display-4">Welcome to '.$catName.' forums</h1>
+                <p class="lead">'.$catDesc.'</p>
+                <hr class="my-4">
+                <p>This forum is to share knowledge about '.$catName.' with each other. Please follow the following rules:-</p>
+                <ul>
+                    <li>No Spam / Advertising / Self-promote in the forums.</li> 
+                    <li>Do not post copyright-infringing material.</li>
+                    <li>Do not post “offensive” posts, links or images.</li>
+                    <li>Do not cross post questions.</li>
+                    <li>Do not PM users asking for help.</li>
+                    <li>Remain respectful of other members at all times.</li>
+                </ul>
+                <hr>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Browse Topics</a>
+            </div>
+        </div>';
+            
+        }
+    }
+    ?>
+    
     <div class="container">
         <h1>Browse questions</h1>
-        <div class="media">
-            <img src="..." class="mr-3" alt="...">
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
             <div class="media-body">
-                <h5 class="mt-0">Media heading</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                fringilla. Donec lacinia congue felis in faucibus.
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
+            </div>
+        </div>
+        <div class="media my-2">
+            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">Kartikey</h5>
+                Hey i am stuck at installing PyGAME but dont know from where to download. Can Someone help me pls??
             </div>
         </div>
     </div>

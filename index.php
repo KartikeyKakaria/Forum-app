@@ -56,9 +56,9 @@
               <div class="card" style="width: 18rem;">
                 <img src="https://source.unsplash.com/500x350/?'.$row['category_name'].',code" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <h5 class="card-title">'.$row['category_name'].'</h5>
+                    <a href="/Forum-app/threads.php?id='.$row['id'].'" class="card-title">'.$row['category_name'].'</a>
                     <p class="card-text">'.substr($row['category_description'], 0 , 100).'<a href="#">...</a></p>
-                    <a href="#" class="btn btn-primary">View threads</a>
+                    <a href="/Forum-app/threads.php?id='.$row['id'].'" class="btn btn-primary">View threads</a>
                   </div>
               </div>
             </div>';
