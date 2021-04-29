@@ -19,42 +19,31 @@
     <?php include 'partials/_header.php' ?>
     <?php include 'partials/_dbconnect.php' ?>
     <?php
-        $id = '';
+    $id = '';
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $sql = "SELECT*FROM `categories` WHERE `id` = $id";
+        $sql = "SELECT*FROM `threads` WHERE `id` = $id";
         $result = mysqli_query($conn, $sql);
         if($result){
-            $cat = mysqli_fetch_assoc($result);
-                $catName = $cat['category_name'];
-            $catDesc = $cat['category_description'];
+            $row = mysqli_fetch_assoc($result);
+            $title = $row['title'];
+            $description = $row['description'];
             echo '<div class="container my-4">
             <div class="jumbotron">
-                <h1 class="display-4">Welcome to '.$catName.' forums</h1>
-                <p class="lead">'.$catDesc.'</p>
+                <h1 class="display-4"> '.$title.' </h1>
+                <p class="lead">'.$description.'</p>
                 <hr class="my-4">
-                <p>This forum is to share knowledge about '.$catName.' with each other. Please follow the following rules:-</p>
-                <ul>
-                    <li>No Spam / Advertising / Self-promote in the forums.</li> 
-                    <li>Do not post copyright-infringing material.</li>
-                    <li>Do not post “offensive” posts, links or images.</li>
-                    <li>Do not cross post questions.</li>
-                    <li>Do not PM users asking for help.</li>
-                    <li>Remain respectful of other members at all times.</li>
-                </ul>
-                <hr>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Browse Topics</a>
+                <p>Posted by <b>Kartikey</b></p>
             </div>
         </div>';
-            
         }
     }
     ?>
-    
+
     <div id="questions" class="container">
-        <h1>Browse questions</h1>
+        <h1>Discussion</h1>
         <!-- using a while loop to pull all threads with the categories as th same in get -->
-            <?php
+        <?php
             $id = $_GET['id'];
             $sql = "SELECT*FROM `threads` WHERE `catid` = $id";
             $result = mysqli_query($conn, $sql);
@@ -66,14 +55,14 @@
                     echo '<div class="media my-2">
                     <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
                     <div class="media-body">
-                        <h5><a href="thread.php?id='.$thread_id.'"><h5 class="mt-0">'.$title.'</a></h5>
+                        <a href="thread.php"><h5 class="mt-0">'.$title.'</a></h5>
                         '.$description.'
                     </div>
                 </div><br>';
                 }
             }
             ?>
-            </div>
+    </div>
     <?php include 'partials/_footer.html' ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
