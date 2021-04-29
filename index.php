@@ -11,9 +11,11 @@
     <title>iForums -coding discussions</title>
   </head>
   <body>
+
     <!-- header -->
   <?php include 'partials/_header.php' ?>
   <?php include 'partials/_dbconnect.php' ?>
+  <?php include 'partials/_signup.php' ?>
   <!-- slider  starts-->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -23,13 +25,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="partials/code.jpg" class="d-block w-100" alt="...">
+      <img src="images/code.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="partials/Programmer.jpg" class="d-block w-100" alt="...">
+      <img src="images/Programmer.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="partials/C.jpg" class="d-block w-100" alt="...">
+      <img src="images/C.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -54,7 +56,6 @@
        # using a for loop to iterate through categories
       echo  '<div class="col-md-4 my-2">
               <div class="card" style="width: 18rem;">
-                <img src="https://source.unsplash.com/500x350/?'.$row['category_name'].',code" class="card-img-top" alt="...">
                   <div class="card-body">
                     <a href="/Forum-app/threads.php?id='.$row['id'].'" class="card-title">'.$row['category_name'].'</a>
                     <p class="card-text">'.substr($row['category_description'], 0 , 100).'<a href="threads.php?id='.$row['id'].'">...</a></p>

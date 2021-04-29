@@ -43,5 +43,5 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
 </div>
 </nav>';
 include 'partials/_loginModal.php';
-include 'partials/_signupModal.php';
+include 'partials/_signupModal.html';
 ?>
