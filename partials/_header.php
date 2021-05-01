@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(isset($_SESSION['name'])){
 echo '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
 <a class="navbar-brand" href="/Forum-app">iDiscuss</a>

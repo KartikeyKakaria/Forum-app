@@ -1,12 +1,13 @@
 <?php 
+$loginned = false;
 include '_dbconnect.php';
 $errors = array(
     'user' => false,
     'pass' => false,
 );
-if(isset($_POST['email'])){
+if(isset($_POST['emailL'])){
     $loginned = false;
-    $email = $_POST['email'];
+    $email = $_POST['emailL'];
     $password = $_POST['password'];
     $sql = "SELECT*FROM `user` WHERE `user`.`email`='$email'";
     $result = mysqli_query($conn, $sql);
@@ -20,7 +21,6 @@ if(isset($_POST['email'])){
                 $_SESSION['email'] = $email;
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
-                echo $_SESSION['name'];
             }
             else{
                 $errors['pass'] = true;

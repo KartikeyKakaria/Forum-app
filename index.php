@@ -15,8 +15,7 @@
     <!-- header -->
   <?php include 'partials/_header.php' ?>
   <?php
-  if(isset($loginned)){
-    if($loginned){
+  if($loginned){
       echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong>Success!</strong> You were loginned successfully!
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -32,7 +31,7 @@
         </button>
       </div>';
     }
-  }
+  
   ?>
   <?php include 'partials/_dbconnect.php' ?>
   <?php include 'partials/_signup.php' ?>
