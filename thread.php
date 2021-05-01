@@ -39,9 +39,8 @@
         }
     }
     ?>
-
     <div id="questions" class="container">
-        <h1>Discussion</h1>
+        <h1>Browse Questions</h1>
         <!-- using a while loop to pull all threads with the categories as th same in get -->
         <?php
             $id = $_GET['id'];

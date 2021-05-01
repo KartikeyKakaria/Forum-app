@@ -1,3 +1,23 @@
+<?php
+include 'partials/_dbconnect.php';
+$asked = false;
+$error = false;
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $catid = $_GET['id'];
+    $userid = $_COOKIE['id'];
+    $sql = "INSERT INTO `threads` (`id`, `title`, `description`, `category_id`, `user_id`, `date`) VALUES ('', '$title', '$description', '$catid', '$userid', current_timestamp());";
+    $result = mysqli_query($conn, $sql);
+    if($result){
+        $asked = true;
+    }
+    else{
+        $error = true;
+    }
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -17,7 +37,24 @@
 <body>
     <!-- header -->
     <?php include 'partials/_header.php' ?>
-    <?php include 'partials/_dbconnect.php' ?>
+    <?php
+    if($asked) {
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Your question was posted successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>;
+      </div>';
+    }
+    if($error){
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong>We could not post your question due to some technical issues. We regret for the inconvenience caused.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
+    }
+    ?>
     <?php
         $id = '';
     if(isset($_GET['id'])){
@@ -50,30 +87,73 @@
         }
     }
     ?>
-    
+
+    <div class="container" id="ask">
+    <?php
+    if(isset($_COOKIE['name'])){
+        $id = $_GET['id'];
+        echo '<h2>Ask question</h2>
+        <form method="post" action="/Forum-app/threads.php?id='.$id.'">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" maxlength="2000" class="form-control" id="exampleInputEmail1" name="title"
+                    aria-describedby="emailHelp" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Description"
+                    name="description">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>';
+    }
+    else{
+        echo '<div class="jumbotron">
+        <h1 class="danger display-4">&times</h1>
+        <p class="lead">Sorry you cannot ask questions at our website. Please register to the website to start asking questions.</p>
+      </div>';
+    }
+    ?>
+    <hr>
     <div id="questions" class="container">
         <h1>Browse questions</h1>
         <!-- using a while loop to pull all threads with the categories as th same in get -->
-            <?php
+        <?php
             $id = $_GET['id'];
-            $sql = "SELECT*FROM `threads` WHERE `catid` = $id";
+            $sql = "SELECT*FROM `threads` WHERE `category_id` = $id";
             $result = mysqli_query($conn, $sql);
             if($result) {
                 while($row = mysqli_fetch_assoc($result)){
                     $title = $row['title'];
                     $description = $row['description'];
                     $thread_id = $row['id'];
-                    echo '<div class="media my-2">
-                    <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
-                    <div class="media-body">
-                        <h5><a href="thread.php?id='.$thread_id.'"><h5 class="mt-0">'.$title.'</a></h5>
-                        '.$description.'
-                    </div>
-                </div><br>';
+                    if(isset($_COOKIE['name'])){
+                        echo '<div class="media my-3">
+                        <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+                        <div class="media-body">
+                            <h5><a href="thread.php?id='.$thread_id.'"><h5 class="mt-0">'.$title.'</a></h5>
+                            '.$description.'<br>
+                            <form action="thread.php" method="get">
+                            <input type="hidden" name="id" value="'.$thread_id.'">
+                            <button class="my-2 btn btn-primary">Comment</button>
+                            </form>
+                        </div>
+                    </div><br>';
+                    }
+                    else{
+                        echo '<div class="media my-3">
+                        <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+                        <div class="media-body">
+                            <h5><a href="thread.php?id='.$thread_id.'"><h5 class="mt-0">'.$title.'</a></h5>
+                            '.$description.'
+                        </div>
+                    </div><br>';
+                    }
                 }
             }
             ?>
-            </div>
+    </div>
     <?php include 'partials/_footer.html' ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
