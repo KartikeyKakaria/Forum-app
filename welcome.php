@@ -54,6 +54,7 @@
       echo  '<div class="col-md-4 my-2">
               <div class="card" style="width: 18rem;">
                   <div class="card-body">
+                  <img src="https://source.unsplash.com/250x200/?code,'.$row['category_name'].'" alt="" srcset="">
                     <a href="/Forum-app/threads.php?id='.$row['id'].'" class="card-title">'.$row['category_name'].'</a>
                     <p class="card-text">'.substr($row['category_description'], 0 , 100).'<a href="threads.php?id='.$row['id'].'">...</a></p>
                     <a href="/Forum-app/threads.php?id='.$row['id'].'" class="btn btn-primary">View threads</a>
