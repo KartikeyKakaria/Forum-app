@@ -11,11 +11,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" action="/Forum-app/index.php">
+            <form method="post" action="/Forum-app/">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" required>
+                        <input maxlength="14"  minlength="3" type="text" name="name" class="form-control" required>
                         <label for="exampleInputEmail1">Email address</label>
                         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                         <small id="emailHelp" class="form-text text-muted">We will never share your email with anyone

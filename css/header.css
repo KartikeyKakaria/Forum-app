@@ -8,10 +8,11 @@
     width: 75px;
     text-align: center;
     justify-content: center;
-    ;
 }
 
 #name {
+    font-weight: bold;
+    font-size: 10px;
     position: relative;
-    top: 18%;
+    top: 28%;
 }
