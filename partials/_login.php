@@ -17,6 +17,9 @@ if(isset($_POST['emailL'])){
         if($num == 1){
             if(password_verify($password, $user['password'])){
                 session_start();
+                setcookie("name", $user['name'], time()+2592000, "/Forum-app");
+                setcookie("email", $user['email'], time()+2592000, "/Forum-app");
+                setcookie("id", $user['id'], time()+2592000, "/Forum-app");
                 $loginned = true;
                 $_SESSION['email'] = $email;
                 $_SESSION['id'] = $user['id'];

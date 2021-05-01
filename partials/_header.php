@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['name'])){
+if(isset($_COOKIE['name'])){
 echo '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
 <a class="navbar-brand" href="/Forum-app">iDiscuss</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-primary mx-2 my-sm-0" type="submit">Search</button>
-            <a href="/Forum-app/welcome.php?id='.$_SESSION['id'].'" id="user"><p id="name">'.$_SESSION['name'].'</p></a>         
+            <a href="/Forum-app/welcome.php?id='.$_COOKIE['id'].'" id="user"><p id="name">'.$_COOKIE['name'].'</p></a>         
         </div>
     </form>
 </div>
