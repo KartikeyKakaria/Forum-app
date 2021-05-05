@@ -57,7 +57,7 @@ else{
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Topics
-      </a>
+        </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -67,6 +67,9 @@ else{
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Forum-app/contact.php" tabindex="-1">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Forum-app/partials/_logout.php" tabindex="-1">Logout</a>
         </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 row">
