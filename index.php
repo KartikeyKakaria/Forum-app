@@ -31,6 +31,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
+      echo var_dump($errors['pass']);
+      echo var_dump($errors['user']);
     }
   
   ?>
