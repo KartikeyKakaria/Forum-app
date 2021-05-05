@@ -97,10 +97,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     ?>
     <div class="container" id="ask">
         <h2>Answer</h2>
-        <?php echo '<form action="/Forum-app/thread.php?id='.$_GET['id'].'" method="post">'?>
+        <?php
+        if(isset($_COOKIE['name'])){
+            echo '<form action="/Forum-app/thread.php?id='.$_GET['id'].'" method="post">
             <textarea placeholder="Write Answer" name="answer" id="answer" cols="30" rows="10" class="form-control"></textarea>
             <button class="btn btn-success my-2" type="submit">Answer</button>
-        </form>
+        </form>'
+        }else{
+            echo "<h5>Please login to our website to ask questions</h5>"
+        }
+        ?>
+            
     </div>
     <hr>
     <div id="questions" class="container">
@@ -138,7 +145,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </div>
                       </div>';
                     }
-                    echo '
+                    if(isset($_COOKIE['name'])){
+                        echo '
                     <div class="media my-2">
                     <div class="commenet">
                     <div class="media-body">
@@ -157,7 +165,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 <h3>Reply</h3>
                                 <form action="/Forum-app/thread.php?id='.$id.'" method="post">
                                     <input type="hidden" name="quesId" value="'.$thread_id.'">
-                                    <textarea name="reply" id="reply" cols="30" rows="2"></textarea><br>
+                                    <textarea required="true" name="reply" id="reply" cols="30" rows="2"></textarea><br>
                                     <button class="btn btn-danger" type="submit">Reply</button>
                                 </form>
                                 <div class="card card-body my-3">
@@ -168,6 +176,33 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         </div>
                     </div>
                         </div><br>';
+                    }
+                    else{
+                        echo '
+                    <div class="media my-2">
+                    <div class="commenet">
+                    <div class="media-body">
+                            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+                            <a href="thread.php">
+                                <h5 class="mt-0">'.$commenter_name.'</h5>
+                            </a>
+                            '.$description.'
+                        </div> 
+                        <br>
+                        <button id="reply'.$thread_id.'" onclick="arrow(\'reply'.$thread_id.'\')" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample'.$thread_id.'" aria-expanded="false" aria-controls="multiCollapseExample'.$thread_id.'">View Replies &darr;</button>
+                        <br>
+                        <br>
+                        <div class="col">
+                            <div class="replies collapse multi-collapse" id="multiCollapseExample'.$thread_id.'">
+                                <div class="card card-body my-3">
+                                    <h4>Replies</h4>
+                                    '.$replies.'
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div><br>';
+                    }
                 }
             }
             else{
