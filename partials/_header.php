@@ -33,7 +33,8 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-primary mx-2 my-sm-0" type="submit">Search</button>
-            <a href="/Forum-app/welcome.php?id='.$_COOKIE['id'].'"><button class="btn btn-success mx-2 my-sm-0" type="button">'.$_COOKIE['name'].'</button>  </a>       
+            <a href="/Forum-app/welcome.php?id='.$_COOKIE['id'].'"><button class="btn btn-success mx-2 my-sm-0" type="button">'.$_COOKIE['name'].'</button>  </a>
+            <button type="button" id="logout" class="nav-item btn btn-warning" tabindex="-1">Logout</button>
         </div>
     </form>
 </div>

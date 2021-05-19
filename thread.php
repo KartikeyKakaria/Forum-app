@@ -222,6 +222,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
     </script>
     <script src="js/thread.js"></script>
+    <script src="js/_logout.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

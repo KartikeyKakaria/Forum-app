@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="css/footer.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
     <title>iForums -coding discussions</title>
+    <script src="js/login.js"></script>
+    <script src="js/_logout.js"></script>
   </head>
   <body>
     <!-- header -->
   <?php include 'partials/_header.php' ?>
+  <div id="alert">
   <?php
   if($loginned){
       echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Success!</strong> You were loginned successfully!
+      <strong>Success!</strong><input type="hidden" value="log" id="logout"> You were loginned successfully!
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -26,7 +28,7 @@
     }
     if($errors['pass'] || $errors['user']){
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> Invalid credentials
+        <strong>Error!</strong><input type="hidden" value="lol" id="logout"> Invalid credentials
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -34,8 +36,26 @@
       echo var_dump($errors['pass']);
       echo var_dump($errors['user']);
     }
+    if(isset($_GET['logout'])){
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success!</strong> You were logout successfully!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+    }
+    if(isset($_GET['loginned'])){
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success!</strong><input type="hidden" value="log" id="logout"> You were loginned successfully!
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+    }
+    
   
   ?>
+  </div>
   <?php include 'partials/_dbconnect.php' ?>
   <?php include 'partials/_signup.php' ?>
   <!-- slider  starts-->

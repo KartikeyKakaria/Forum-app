@@ -1,4 +1,5 @@
 <?php 
+// echo $_POST['nameL'];
 $loginned = false;
 include '_dbconnect.php';
 $errors = array(
