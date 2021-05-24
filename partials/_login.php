@@ -26,6 +26,9 @@ if(isset($_POST['nameL'])){
                 $_SESSION['email'] = $email;
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
+                if(!isset($_COOKIE['name'])){
+                    header('Refresh: 1; url=index.php?loginned=true');
+                }
             }
             else{
                 $errors['pass'] = true;
