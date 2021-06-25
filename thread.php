@@ -102,9 +102,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo '<form action="/Forum-app/thread.php?id='.$_GET['id'].'" method="post">
             <textarea placeholder="Write Answer" name="answer" id="answer" cols="30" rows="10" class="form-control"></textarea>
             <button class="btn btn-success my-2" type="submit">Answer</button>
-        </form>'
+        </form>';
         }else{
-            echo "<h5>Please login to our website to ask questions</h5>"
+            echo "<h5>Please login to our website to ask questions</h5>";
         }
         ?>
             
@@ -151,9 +151,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="commenet">
                     <div class="media-body">
                             <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
-                            <a href="thread.php">
                                 <h5 class="mt-0">'.$commenter_name.'</h5>
-                            </a>
                             '.$description.'
                         </div> 
                         <br>
