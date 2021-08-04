@@ -63,13 +63,13 @@ else{
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>iDiscuss - coding discussions</title>
     <link rel="stylesheet" href="css/footer.css">
-    <title>Hello, world!</title>
 </head>
 
 <body>
     <?php include 'partials/_header.php'; ?>
-    <div class="container-fluid my-3 mx-5">
+    <div class="container-fluid my-3 px-5">
         <h1><?php 
           if($_SERVER['REQUEST_METHOD'] == "GET"){
             if($search){ 
@@ -78,8 +78,8 @@ else{
             else{ echo "Sorry we could not find any matches for that search";}
           }
   ?></h1>
-  <hr>
-        <div class="my-3 mx-4 container results">
+        <hr>
+        <div class="my-3 px-4 container results">
             <?php
         foreach($results as $id => $value){
           $showSql = "SELECT*FROM `threads` where `id`= '$id'";
@@ -90,9 +90,9 @@ else{
               $title = $row['title'];
               $Description = $row['description'];
               echo "<div class='container result'>
-              <h2><a href='/Forum-app/thread.php?id=$id'>$title</a></h2>
-              <p>$Description</p>
-              </div>";
+                      <h2><a href='/Forum-app/thread.php?id=$id'>$title</a></h2>
+                      <p>$Description</p>
+                    </div><hr>";
             }
           }
           else{
@@ -108,7 +108,7 @@ else{
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5spxKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">

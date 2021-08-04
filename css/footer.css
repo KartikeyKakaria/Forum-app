@@ -1,8 +1,14 @@
-footer {
-    position: absolute;
-    bottom: 0px;
+div#footer {
+    padding: 0;
+    top: 50vh;
+    position: relative;
+    height: 50px;
+    margin: 0;
+    justify-content: center;
+    background-image: linear-gradient( 45deg, black, gray);
 }
 
-body {
-    min-height: 100vh;
+#footer p {
+    position: relative;
+    top: 20%;
 }

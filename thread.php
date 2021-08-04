@@ -41,14 +41,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/footer.css">
+    <!-- <link rel="stylesheet" href="css/footer.css"> -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>iForums -coding discussions</title>
-    <link rel="stylesheet" href="css/threads.css">
-    
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -107,7 +108,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "<h5>Please login to our website to ask questions</h5>";
         }
         ?>
-            
+
     </div>
     <hr>
     <div id="questions" class="container">

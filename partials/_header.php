@@ -1,6 +1,7 @@
+<header>
 <?php
 if(isset($_COOKIE['name'])){
-echo '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+echo '<header><nav id="header" class="mx-0 px-5 navbar navbar-expand-lg navbar-dark bg-danger">
 <a class="navbar-brand" href="/Forum-app">iDiscuss</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -37,10 +38,10 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
             <button type="button" id="logout" class="nav-item btn btn-warning" tabindex="-1">Logout</button>
         </div>
 </div>
-</nav>';
+</nav></header>';
 }
 else{
-  echo  '<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  echo  '<header><nav id="header" class="px-5 mx-0 navbar navbar-expand-lg navbar-dark bg-danger">
 <a class="navbar-brand" href="/Forum-app">iDiscuss</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -84,8 +85,9 @@ else{
         </div>
     </form>
 </div>
-</nav>';
+</nav></header>';
 }
 include 'partials/_loginModal.html';
 include 'partials/_signupModal.html';
 ?>
+</header>
