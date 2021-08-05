@@ -31,11 +31,11 @@ echo '<header><nav id="header" class="mx-0 px-5 navbar navbar-expand-lg navbar-d
     </ul>
     <div class="container-inline mx-2 my-2 my-lg-0 row">
         <form method="get" action="/Forum-app/search.php" class="form-inline "> 
-            <input name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary mx-2 my-sm-0" type="submit">Search</button>
+            <input id="search" name="query" class="form-control " type="search" placeholder="Search" aria-label="Search">
+            <button id="searchBTN" class="btn btn-primary " type="submit">Search</button>
         </form>
-            <a href="/Forum-app/welcome.php?id='.$_COOKIE['id'].'"><button class="btn btn-success mx-2 my-sm-0" type="button">'.$_COOKIE['name'].'</button>  </a>
-            <button type="button" id="logout" class="nav-item btn btn-warning" tabindex="-1">Logout</button>
+            <a href="/Forum-app/welcome.php?id='.$_COOKIE['id'].'"><button id="welcome" class="btn btn-success " type="button">'.$_COOKIE['name'].'</button>  </a>
+            <button type="button" id="logout" class="nav-item btn btn-success" tabindex="-1">Logout</button>
         </div>
 </div>
 </nav></header>';
@@ -74,8 +74,8 @@ else{
     </ul>
     <form class="form-inline my-2 my-lg-0 row">
         <div class="container">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary mx-2 my-sm-0" type="submit">Search</button>
+            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button id="searchBTN" class="btn btn-primary mx-2 my-sm-0" type="submit">Search</button>
             <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#loginModal">
                 Login
             </button>

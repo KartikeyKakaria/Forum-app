@@ -23,6 +23,7 @@
 
     <title>Hello, world!</title>
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>

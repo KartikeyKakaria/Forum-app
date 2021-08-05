@@ -1,0 +1,31 @@
+nav#header {
+    background-image: linear-gradient( 135deg, orange, red);
+    font-family: sans-serif;
+    color: black;
+}
+
+input#search {
+    border-radius: 0;
+    width: 250px;
+    font-family: sans-serif;
+    background-color: aliceblue;
+    margin: 0 15px;
+}
+
+button#searchBTN {
+    border-radius: 20px;
+    background-color: cornflowerblue;
+    border: 5px solid black;
+    margin-right: 30px;
+}
+
+button#welcome {
+    background-color: chocolate;
+    margin-right: 15px;
+    height: 46px;
+    border: 2px groove black;
+}
+
+button#logout {
+    border: 2px groove black;
+}

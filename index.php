@@ -10,6 +10,7 @@
     <title>iForums -coding discussions</title>
     <script src="js/logout.js"></script>
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
   </head>
   <body>
     <!-- header -->

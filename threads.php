@@ -33,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <title>iForums -coding discussions</title>
     <!-- <link rel="stylesheet" href="css/threads.css"> -->
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
