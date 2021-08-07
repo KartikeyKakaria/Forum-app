@@ -1,0 +1,28 @@
+* {
+    font-family: sans-serif;
+}
+
+.cardy {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0;
+    background-image: radial-gradient(grey, black);
+    color: white;
+}
+
+.btn-custom {
+    color: #fff;
+    border: 2px solid rgb(194, 92, 8);
+}
+
+.btn-custom:hover {
+    background-color: rgb(194, 92, 8);
+    color: #fff;
+}

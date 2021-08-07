@@ -11,6 +11,7 @@
     <script src="js/logout.js"></script>
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
     <!-- header -->
@@ -96,11 +97,11 @@
      while($row = mysqli_fetch_assoc($result)){
        # using a for loop to iterate through categories
       echo  '<div class="col-md-4 my-2">
-              <div class="card" style="width: 18rem;">
+              <div class="cardy" style="width: 18rem;">
                   <div class="card-body">
                     <a href="/Forum-app/threads.php?id='.$row['id'].'" class="card-title">'.$row['category_name'].'</a>
                     <p class="card-text">'.substr($row['category_description'], 0 , 100).'<a href="threads.php?id='.$row['id'].'">...</a></p>
-                    <a href="/Forum-app/threads.php?id='.$row['id'].'" class="btn btn-primary">View threads</a>
+                    <a href="/Forum-app/threads.php?id='.$row['id'].'" class="btn btn-custom">View threads</a>
                   </div>
               </div>
             </div>';

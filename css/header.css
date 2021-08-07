@@ -28,4 +28,5 @@ button#welcome {
 
 button#logout {
     border: 2px groove black;
+    background-color: chartreuse;
 }
