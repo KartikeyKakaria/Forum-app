@@ -1,0 +1,18 @@
+img {
+    border-radius: 50%;
+}
+
+a:link {
+    color: darkblue;
+    text-transform: capitalize;
+}
+
+a:visited {
+    color: red;
+    text-transform: capitalize;
+}
+
+a:hover {
+    text-transform: capitalize;
+    color: orange;
+}

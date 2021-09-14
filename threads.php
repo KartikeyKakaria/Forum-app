@@ -34,6 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <!-- <link rel="stylesheet" href="css/threads.css"> -->
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/threads.css">
 </head>
 
 <body>
@@ -127,19 +128,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $result = mysqli_query($conn, $sql);
             if($result) {
                 while($row = mysqli_fetch_assoc($result)){
+                    $user = $row['user_id'];
                     $title = $row['title'];
                     $description = $row['description'];
                     $thread_id = $row['id'];
+                    $poster = '';
+                    $posterSql =  "SELECT * FROM `user` WHERE id = $user";
+                    $posteResult = mysqli_query($conn, $posterSql);
+                    while($row2 = mysqli_fetch_assoc($posteResult)){
+                        $poster = $row2['name'];
+                    }
                     if(isset($_COOKIE['name'])){
                         echo '<div class="media my-3">
-                        <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+                        <img src="images/pfp.png" class="mr-3" height="50px" width="50px" alt="...">
                         <div class="media-body">
-                            <h5><a href="thread.php?id='.$thread_id.'"><h5 class="mt-0">'.$title.'</a></h5>
-                            '.$description.'<br>
+                            <h5 class="heading"><a href="thread.php?id='.$thread_id.'"><h5 class="mt-0">'.$title.'</a></h5>
+                            '.$description.'
+                            <small>By '.$poster.'</small><br>
                             <form action="thread.php" method="get">
                             <input type="hidden" name="id" value="'.$thread_id.'">
                             <button class="my-2 btn btn-primary">Comment</button>
                             </form>
+                            <hr>
                         </div>
                     </div><br>';
                     }

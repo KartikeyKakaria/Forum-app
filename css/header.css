@@ -30,3 +30,7 @@ button#logout {
     border: 2px groove black;
     background-color: chartreuse;
 }
+
+.btni:hover {
+    filter: brightness(60%)!important;
+}

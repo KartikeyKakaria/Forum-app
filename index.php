@@ -33,8 +33,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
-      echo var_dump($errors['pass']);
-      echo var_dump($errors['user']);
     }
     if(isset($_GET['logout'])){
       echo '<div class="alert alert-success alert-dismissible fade show" role="alert">

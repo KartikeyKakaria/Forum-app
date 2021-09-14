@@ -51,6 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/thread.css">
 </head>
 
 <body>
@@ -58,16 +59,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <?php include 'partials/_header.php' ?>
     <?php
     if($answered){
-        echo 'bale bale shawa shawa';
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong>Your answer was submitted successfully. Thanks for contributing to the community.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
     }
     if($answeredError){
-        echo 'bruhhhhhhhhhhhhhhhhhhhhh';
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong>We could not post your answer due to some technical issues. We regret for the inconvenience caused.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
     }
     if($replied){
-        echo 'oh bhai replied';
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong>Your reply was posted successfully
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
     }
     if($repliedErr){
-        echo 'reply mein error';
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong>We could not post your replu due to some technical issues. We regret for the inconvenience caused.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>';
     }
     ?>
     <?php include 'partials/_dbconnect.php' ?>
@@ -140,7 +161,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         $replier = mysqli_fetch_assoc($replierResult);
                         $replierName = $replier['name'];
                         $replies.='<div class="media">
-                        <img height="25px" width="25px" src="images/user-image.png" class="mr-3" alt="...">
+                        <img height="25px" width="25px" src="images/pfp.png" class="mr-3" alt="...">
                         <div class="media-body">
                           <h5 class="mt-0">'.$replierName.'</h5>
                           '.$replyDescription.'
@@ -152,7 +173,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="media my-2">
                     <div class="commenet">
                     <div class="media-body">
-                            <img src="images/user-image.png" class="mr-3" height="25px" width="25px" alt="...">
+                            <img src="images/pfp.png" class="mr-3" height="25px" width="25px" alt="...">
                                 <h5 class="mt-0">'.$commenter_name.'</h5>
                             '.$description.'
                         </div> 
@@ -175,7 +196,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             </div>
                         </div>
                     </div>
-                        </div><br>';
+                        </div><br><hr>';
                     }
                     else{
                         echo '
